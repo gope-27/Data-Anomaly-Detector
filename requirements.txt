@@ -4,3 +4,4 @@ streamlit==1.16.0
 openpyxl==3.0.10
 sqlalchemy
 streamlit_option_menu 
+annotated_text
