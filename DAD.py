@@ -6,13 +6,51 @@ from PIL import Image
 from datetime import datetime
 import sqlalchemy
 from sqlalchemy import create_engine
+from annotated_text import annotated_text
+# Import required modules
+
+# from pathlib import Path
+# import streamlit_authenticator as stauth
+# import pandas as pd
+# import streamlit as st
+# from PIL import Image
+# from annotated_text import annotated_text
 
 
 st.set_page_config(page_title="DAD", page_icon="tata-icon (1).png",
                    layout="wide", initial_sidebar_state="expanded")
 
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-image: url("https://t4.ftcdn.net/jpg/03/78/44/63/240_F_378446379_wj5xTWKl8jnQgCDPxALAPuXV3xNBIXx5.jpg");
+background-size:210%;
+background-position: right center;
+background-repeat: no-repeat;
+background-attachment: local;
+}}
+[data-testid="stHeader"] {{
+background: rgba(0,0,0,0);
+}}
+[data-testid="stToolbar"] {{
+right: 0rem;
+}}
+</style>
+"""
 
-st.subheader("Data Anomaly Detector")
+st.markdown(page_bg_img, unsafe_allow_html=True)
+hide_menu_style ="""
+        <style>
+        footer{visibility:hidden;}
+        <style>
+        """
+st.markdown(hide_menu_style,unsafe_allow_html=True)        
+annotated_text(
+    ("Data Anomaly Detector!","#9fd6fc")
+ )
+
+
+# st.subheader("Data Anomaly Detector")
 
 name = st.text_input("Enter your name ")
 
@@ -66,10 +104,11 @@ if data_file_name == 'PTX':
                 found = True
         if found:
             st.write("Below columns are not in the given list")
+            new_columns
         else:
             st.write("")
 
-        new_columns
+        # new_columns
         
 
 
